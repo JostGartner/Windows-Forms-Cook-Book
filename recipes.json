@@ -1,0 +1,205 @@
+[
+  {
+    "Name": "Špageti Carbonara",
+    "Description": "Klasična italijanska jed iz testenin z jajci, sirom, panceto in poprom.",
+    "ImagePath": "images/carbonara.jpg",
+    "Ingredients": [
+      "200g špagetov",
+      "100g pancete",
+      "2 veliki jajci",
+      "50g naribanega parmezana",
+      "Sol in sveže mlet črni poper po okusu"
+    ],
+    "Instructions": [
+      "Skuhaj špagete v slani vreli vodi do al dente.",
+      "Popeči panceto, dokler ne postane hrustljava.",
+      "Vmešaj jajca in parmezan.",
+      "Zmešaj špagete s panceto.",
+      "Dodaj jajčno mešanico in hitro premešaj.",
+      "Začini po okusu in postrezi."
+    ]
+  },
+  {
+    "Name": "Kremna bučna juha",
+    "Description": "Okusna jesenska bučna juha s kremasto teksturo in začimbami.",
+    "ImagePath": "images/bucna_juha.jpg",
+    "Ingredients": [
+      "500g buče",
+      "1 čebula",
+      "2 stroka česna",
+      "500ml zelenjavne jušne osnove",
+      "100ml smetane za kuhanje",
+      "Sol, poper, muškatni orešček po okusu",
+      "Oljčno olje za praženje"
+    ],
+    "Instructions": [
+      "Na oljčnem olju prepraži nasekljano čebulo in česen.",
+      "Dodaj na kocke narezano bučo in praži nekaj minut.",
+      "Zalij z zelenjavno jušno osnovo in kuhaj 15–20 minut, dokler buča ni mehka.",
+      "S paličnim mešalnikom zmelji juho do gladke teksture.",
+      "Dodaj smetano, začimbe in premešaj.",
+      "Postrezi toplo, po želji okrašeno s pečenimi bučnimi semeni."
+    ]
+  },
+  {
+    "Name": "Pečena piščančja bedra z zelenjavo",
+    "Description": "Enostavna jed z aromatičnimi pečenimi piščančjimi bedrci in sezonsko zelenjavo.",
+    "ImagePath": "images/bedra.jpg",
+    "Ingredients": [
+      "4 piščančja bedra",
+      "2 korenčka",
+      "1 rdeča paprika",
+      "1 čebula",
+      "2 žlici oljčnega olja",
+      "Sol, poper, rožmarin po okusu"
+    ],
+    "Instructions": [
+      "Pečico segrej na 200°C.",
+      "Zelenjavo nareži na večje kose in jo zmešaj z oljčnim oljem, soljo, poprom in rožmarinom.",
+      "Piščančja bedra začini s soljo in poprom.",
+      "Zelenjavo položi na pekač, nanjo položi piščančja bedra.",
+      "Peči 35–40 minut, dokler piščanec ni zlato rjav in sočna zelenjava mehka.",
+      "Postrezi toplo."
+    ]
+  },
+  {
+    "Name": "Ocvrti krompir s česnom",
+    "Description": "Hrustljav krompir z aromo česna in zelišč.",
+    "ImagePath": "images/ocvrti_krompir.jpg",
+    "Ingredients": [
+      "500g krompirja",
+      "3 stroki česna",
+      "3 žlice oljčnega olja",
+      "Sol in poper po okusu",
+      "Svež peteršilj za posip"
+    ],
+    "Instructions": [
+      "Krompir olupimo in narežemo na tanke rezine.",
+      "Na olju prepražimo nasekljan česen.",
+      "Dodamo krompir in pražimo, dokler ne postane zlato rjav in hrustljav.",
+      "Začinimo s soljo in poprom.",
+      "Posujemo s svežim peteršiljem in postrežemo."
+    ]
+  },
+  {
+    "Name": "Palačinke z marmelado",
+    "Description": "Klasične mehke palačinke, polnjene z marmelado po okusu.",
+    "ImagePath": "images/palacinke.jpg",
+    "Ingredients": [
+      "200g moke",
+      "2 jajci",
+      "300ml mleka",
+      "1 žlica sladkorja",
+      "Ščepec soli",
+      "Marmelada po okusu",
+      "Oljčno olje ali maslo za peko"
+    ],
+    "Instructions": [
+      "V skledi zmešamo moko, jajca, mleko, sladkor in sol, da dobimo gladko zmes.",
+      "Segrejemo ponev in dodamo malo olja ali masla.",
+      "Pečemo tanke palačinke na obeh straneh.",
+      "Vsako palačinko namažemo z marmelado in zvijemo.",
+      "Postrežemo toplo."
+    ]
+  },
+  {
+    "Name": "Solata Caprese",
+    "Description": "Osvežilna italijanska solata s paradižnikom, mocarelo in baziliko.",
+    "ImagePath": "images/caprese.jpg",
+    "Ingredients": [
+      "2 velika paradižnika",
+      "200g mocarele",
+      "Sveža bazilika",
+      "3 žlice oljčnega olja",
+      "Sol in poper po okusu"
+    ],
+    "Instructions": [
+      "Paradižnik in mocarelo narežemo na rezine.",
+      "Razporedimo jih izmenično na krožniku.",
+      "Potresemo s svežo baziliko.",
+      "Pokapamo z oljčnim oljem in začinimo.",
+      "Postrežemo takoj."
+    ]
+  },
+  {
+    "Name": "Čokoladni mousse",
+    "Description": "Lahka in kremasta sladica s temno čokolado.",
+    "ImagePath": "images/cokoladni_mousse.jpg",
+    "Ingredients": [
+      "200g temne čokolade",
+      "3 jajca",
+      "50g sladkorja",
+      "200ml sladke smetane"
+    ],
+    "Instructions": [
+      "Čokolado stopimo nad paro ali v mikrovalovni pečici.",
+      "Ločimo beljake in rumenjake.",
+      "Rumenjake vmešamo v stopljeno čokolado.",
+      "Beljake stepemo s sladkorjem v čvrst sneg.",
+      "Smetano stepemo v čvrst ščepec.",
+      "Vse skupaj nežno združimo in postavimo v hladilnik za vsaj 2 uri.",
+      "Postrežemo hladno."
+    ]
+  },
+  {
+    "Name": "Goveji golaž",
+    "Description": "Tradicionalni mesni golaž z omako iz čebule in paprike.",
+    "ImagePath": "images/goveji_golaz.jpg",
+    "Ingredients": [
+      "500g govejega mesa",
+      "2 čebuli",
+      "2 žlici olja",
+      "1 žlica mlete paprike",
+      "Sol in poper po okusu",
+      "500ml goveje jušne osnove"
+    ],
+    "Instructions": [
+      "Na olju prepražimo nasekljano čebulo do zlato rjave barve.",
+      "Dodamo meso in ga popečemo z vseh strani.",
+      "Posujemo z mleto papriko in začinimo s soljo ter poprom.",
+      "Zalijemo z govejo jušno osnovo in kuhamo na nizki temperaturi 1–1,5 ure, dokler meso ni mehko.",
+      "Postrežemo s kruhom ali testeninami."
+    ]
+  },
+  {
+    "Name": "Rižota z gobami",
+    "Description": "Kremasta rižota z aromatičnimi gobami in sirom parmezan.",
+    "ImagePath": "images/rizota_gobe.jpg",
+    "Ingredients": [
+      "200g riža za rižoto",
+      "300g gob (šampinjoni ali mešanica)",
+      "1 čebula",
+      "50g masla",
+      "50g parmezana",
+      "500ml zelenjavne jušne osnove",
+      "Sol in poper po okusu"
+    ],
+    "Instructions": [
+      "Na maslu prepražimo nasekljano čebulo.",
+      "Dodamo narezane gobe in jih nekoliko prepražimo.",
+      "Dodamo riž in pražimo minuto ali dve.",
+      "Postopoma dodajamo jušno osnovo, dokler riž ne vpije tekočine in postane kremast.",
+      "Vmešamo nariban parmezan, začinimo in postrežemo toplo."
+    ]
+  },
+  {
+    "Name": "Jabolčni zavitek",
+    "Description": "Sladica z listnatim testom in sladkano jabolčno sredico.",
+    "ImagePath": "images/jabolcni_zavitek.jpg",
+    "Ingredients": [
+      "500g listnatega testa",
+      "4 jabolka",
+      "50g sladkorja",
+      "1 žlička cimeta",
+      "1 jajce za premaz"
+    ],
+    "Instructions": [
+      "Jabolka olupimo in narežemo na tanke rezine.",
+      "Zmešamo z sladkorjem in cimetom.",
+      "Listnato testo razvaljamo in nanj razporedimo jabolčno zmes.",
+      "Zvijemo v valj in premažemo z razžvrkljanim jajcem.",
+      "Pečemo v pečici pri 180°C 25–30 minut, dokler ni zlato rjav.",
+      "Postrežemo toplo."
+    ]
+  }
+]
