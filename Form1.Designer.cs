@@ -86,6 +86,7 @@
             btnDelete.TabStop = false;
             btnDelete.Text = "Izbriši";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -104,6 +105,7 @@
             btnEdit.TabStop = false;
             btnEdit.Text = "Uredi";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnAdd
             // 
@@ -123,6 +125,7 @@
             btnAdd.TabStop = false;
             btnAdd.Text = "Dodaj";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // dataGrid
             // 
@@ -147,6 +150,7 @@
             tableLayoutPanel1.SetRowSpan(dataGrid, 2);
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.Size = new Size(350, 798);
+            dataGrid.StandardTab = true;
             dataGrid.TabIndex = 0;
             dataGrid.TabStop = false;
             dataGrid.CellMouseLeave += dataGrid_CellMouseLeave;
@@ -192,7 +196,7 @@
             // 
             btnYellow.BackColor = Color.Yellow;
             btnYellow.Dock = DockStyle.Fill;
-            btnYellow.FlatAppearance.BorderColor = Color.Yellow;
+            btnYellow.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnYellow.FlatAppearance.BorderSize = 2;
             btnYellow.FlatStyle = FlatStyle.Flat;
             btnYellow.Location = new Point(85, 863);
@@ -200,6 +204,7 @@
             btnYellow.Name = "btnYellow";
             btnYellow.Size = new Size(50, 40);
             btnYellow.TabIndex = 12;
+            btnYellow.TabStop = false;
             btnYellow.UseVisualStyleBackColor = false;
             btnYellow.Click += btnYellow_Click;
             // 
@@ -207,7 +212,7 @@
             // 
             btnBlue.BackColor = Color.Blue;
             btnBlue.Dock = DockStyle.Fill;
-            btnBlue.FlatAppearance.BorderColor = Color.Blue;
+            btnBlue.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnBlue.FlatAppearance.BorderSize = 2;
             btnBlue.FlatStyle = FlatStyle.Flat;
             btnBlue.Location = new Point(325, 863);
@@ -215,6 +220,7 @@
             btnBlue.Name = "btnBlue";
             btnBlue.Size = new Size(50, 40);
             btnBlue.TabIndex = 11;
+            btnBlue.TabStop = false;
             btnBlue.UseVisualStyleBackColor = false;
             btnBlue.Click += btnBlue_Click;
             // 
@@ -222,7 +228,7 @@
             // 
             btnPink.BackColor = Color.Fuchsia;
             btnPink.Dock = DockStyle.Fill;
-            btnPink.FlatAppearance.BorderColor = Color.Fuchsia;
+            btnPink.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnPink.FlatAppearance.BorderSize = 2;
             btnPink.FlatStyle = FlatStyle.Flat;
             btnPink.Location = new Point(265, 863);
@@ -230,6 +236,7 @@
             btnPink.Name = "btnPink";
             btnPink.Size = new Size(50, 40);
             btnPink.TabIndex = 10;
+            btnPink.TabStop = false;
             btnPink.UseVisualStyleBackColor = false;
             btnPink.Click += btnPink_Click;
             // 
@@ -237,7 +244,7 @@
             // 
             btnRed.BackColor = Color.Red;
             btnRed.Dock = DockStyle.Fill;
-            btnRed.FlatAppearance.BorderColor = Color.Red;
+            btnRed.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnRed.FlatAppearance.BorderSize = 2;
             btnRed.FlatStyle = FlatStyle.Flat;
             btnRed.Location = new Point(205, 863);
@@ -245,6 +252,7 @@
             btnRed.Name = "btnRed";
             btnRed.Size = new Size(50, 40);
             btnRed.TabIndex = 9;
+            btnRed.TabStop = false;
             btnRed.UseVisualStyleBackColor = false;
             btnRed.Click += btnRed_Click;
             // 
@@ -252,7 +260,7 @@
             // 
             btnOrange.BackColor = Color.FromArgb(255, 128, 0);
             btnOrange.Dock = DockStyle.Fill;
-            btnOrange.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnOrange.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnOrange.FlatAppearance.BorderSize = 2;
             btnOrange.FlatStyle = FlatStyle.Flat;
             btnOrange.Location = new Point(145, 863);
@@ -260,6 +268,7 @@
             btnOrange.Name = "btnOrange";
             btnOrange.Size = new Size(50, 40);
             btnOrange.TabIndex = 8;
+            btnOrange.TabStop = false;
             btnOrange.UseVisualStyleBackColor = false;
             btnOrange.Click += btnOrange_Click;
             // 
@@ -267,7 +276,7 @@
             // 
             btnLime.BackColor = Color.Lime;
             btnLime.Dock = DockStyle.Fill;
-            btnLime.FlatAppearance.BorderColor = Color.Lime;
+            btnLime.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             btnLime.FlatAppearance.BorderSize = 2;
             btnLime.FlatStyle = FlatStyle.Flat;
             btnLime.Location = new Point(25, 863);
@@ -275,6 +284,7 @@
             btnLime.Name = "btnLime";
             btnLime.Size = new Size(50, 40);
             btnLime.TabIndex = 6;
+            btnLime.TabStop = false;
             btnLime.UseVisualStyleBackColor = false;
             btnLime.Click += btnLime_Click;
             // 

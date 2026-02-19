@@ -99,7 +99,6 @@ public partial class Application : Form
 
         LoadToGrid();
         dataGrid.Parent!.Paint += DataGridPanel_Paint!;
-        //panelBar.Paint += panelBar_Paint!;
     }
 
     private async void LoadRecipe(Recipe recipe)
@@ -119,7 +118,7 @@ public partial class Application : Form
 
         viewer.Visible = false;
 
-        await Task.Delay(100);
+        await Task.Delay(0);
 
         viewer.Visible = true;
     }
@@ -136,6 +135,8 @@ public partial class Application : Form
     }
     private void LoadToGrid()
     {
+        dataGrid.SelectionChanged -= dataGrid_SelectionChanged!;
+
         dataGrid.DataSource = null;
         dataGrid.DataSource = recipes;
 
@@ -143,6 +144,8 @@ public partial class Application : Form
         dataGrid.Columns["ImagePath"]!.Visible = false;
 
         ApplyGridStyle();
+
+        dataGrid.SelectionChanged += dataGrid_SelectionChanged!;
     }
 
     private void ApplyGridStyle()
@@ -162,9 +165,10 @@ public partial class Application : Form
 
     private void dataGrid_SelectionChanged(object sender, EventArgs e)
     {
-        if (dataGrid.CurrentRow != null)
+        if (dataGrid.CurrentRow != null &&
+        dataGrid.CurrentRow.DataBoundItem != null &&
+        dataGrid.CurrentRow.DataBoundItem is Recipe selectedRecipe)
         {
-            Recipe selectedRecipe = (Recipe)dataGrid.CurrentRow.DataBoundItem!;
             LoadRecipe(selectedRecipe);
         }
     }
@@ -181,6 +185,7 @@ public partial class Application : Form
         btn.FlatAppearance.BorderSize = 2;
         btn.Size = new Size(35, 35);
         btn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        btn.TabStop = false;
 
         btn.MouseEnter += (s, e) =>
         {
@@ -265,10 +270,16 @@ public partial class Application : Form
         if (maximizeButton != null) maximizeButton.ForeColor = color;
         if (minimizeButton != null) minimizeButton.ForeColor = color;
 
-        if (panelRecipe.Controls.Count > 0 &&
-            panelRecipe.Controls[0] is UserControlRecipe viewer)
+        if (panelRecipe.Controls.Count > 0)
         {
-            viewer.SetAccentColor(color);
+            if (panelRecipe.Controls[0] is UserControlRecipe viewer)
+            {
+                viewer.SetAccentColor(color);
+            }
+            else if (panelRecipe.Controls[0] is UserControlEditor editor)
+            {
+                editor.SetAccentColor(color);
+            }
         }
     }
 
@@ -318,19 +329,97 @@ public partial class Application : Form
         }
     }
 
-    //private void panelBar_Paint(object sender, PaintEventArgs e)
-    //{
-    //    int thickness = 2;
-    //    using (Pen pen = new Pen(_accentColor, thickness))
-    //    {
-    //        int offset = thickness / 2;
-    //        Rectangle rect = new Rectangle(
-    //            panelBar.Left - offset,
-    //            panelBar.Top - offset,
-    //            panelBar.Width + thickness - 1,
-    //            panelBar.Height + thickness - 1
-    //        );
-    //        e.Graphics.DrawRectangle(pen, rect);
-    //    }
-    //}
+    private void ShowRecipeEditor(Recipe? recipeToEdit)
+    {
+        panelRecipe.Controls.Clear();
+
+        UserControlEditor editor = new UserControlEditor();
+        editor.Dock = DockStyle.Fill;
+        editor.SetAccentColor(_accentColor);
+
+        if (recipeToEdit != null)
+        {
+            editor.LoadRecipe(recipeToEdit);
+        }
+
+        editor.OnSave += (recipe) =>
+        {
+            if (recipeToEdit == null)
+            {
+                recipes!.Add(recipe);
+            }
+            else
+            {
+                int index = recipes!.IndexOf(recipeToEdit);
+                recipes[index] = recipe;
+            }
+
+            SaveToJson();
+            LoadToGrid();
+            LoadRecipe(recipe);
+        };
+
+        editor.OnCancel += () =>
+        {
+            if (recipes!.Count > 0)
+            {
+                LoadRecipe(recipes[0]);
+            }
+        };
+
+        panelRecipe.Controls.Add(editor);
+    }
+
+    private void SaveToJson()
+    {
+        string path = "recipes.json";
+        string json = JsonSerializer.Serialize(recipes, new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        });
+        File.WriteAllText(path, json, Encoding.UTF8);
+    }
+
+    private void btnAdd_Click(object sender, EventArgs e)
+    {
+        ShowRecipeEditor(null);
+    }
+
+    private void btnEdit_Click(object sender, EventArgs e)
+    {
+        if (dataGrid.CurrentRow?.DataBoundItem is Recipe selected)
+        {
+            ShowRecipeEditor(selected);
+        }
+    }
+
+    private void btnDelete_Click(object sender, EventArgs e)
+    {
+        if (dataGrid.CurrentRow?.DataBoundItem is Recipe selected)
+        {
+            var result = MessageBox.Show(
+                $"Ali res želiš izbrisati recept '{selected.Name}'?",
+                "Potrdi brisanje",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                recipes!.Remove(selected);
+                SaveToJson();
+                LoadToGrid();
+
+                if (recipes.Count > 0)
+                {
+                    LoadRecipe(recipes[0]);
+                }
+                else
+                {
+                    panelRecipe.Controls.Clear();
+                }
+            }
+        }
+    }
 }

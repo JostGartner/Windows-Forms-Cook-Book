@@ -14,6 +14,7 @@ public partial class UserControlRecipe : UserControl
     public void LoadRecipe(Recipe recipe)
     {
         labelTitle.Text = recipe.Name;
+        labelImage.Text = string.IsNullOrEmpty(recipe.ImagePath) ? "No Image" : "\"" + Path.GetFileName(recipe.ImagePath) + "\"";
         richTextBoxDescription.Text = recipe.Description;
 
         richTextBoxDescription.SelectAll();
@@ -39,7 +40,7 @@ public partial class UserControlRecipe : UserControl
             pictureBox.Image?.Dispose();
             using (var img = Image.FromFile(recipe.ImagePath))
             {
-                pictureBox.Image = ResizeAndCrop(img, pictureBox.Width, pictureBox.Height);
+                pictureBox.Image = UserControlRecipe.ResizeAndCrop(img, pictureBox.Width, pictureBox.Height);
             }
             pictureBox.SizeMode = PictureBoxSizeMode.Normal;
         }
@@ -108,7 +109,7 @@ public partial class UserControlRecipe : UserControl
         HighlightIngredients(_accentColor);
     }
 
-    private Image ResizeAndCrop(Image img, int width, int height)
+    public static Image ResizeAndCrop(Image img, int width, int height)
     {
         float ratio = Math.Max((float)width / img.Width, (float)height / img.Height);
         int newWidth = (int)(img.Width * ratio);
@@ -157,6 +158,7 @@ public partial class UserControlRecipe : UserControl
         _accentColor = color;
 
         labelTitle.ForeColor = color;
+        labelImage.ForeColor = color;
         labelIngredients.ForeColor = color;
         labelInstructions.ForeColor = color;
 
@@ -164,5 +166,20 @@ public partial class UserControlRecipe : UserControl
         HighlightInstructions(color);
 
         pictureBox.Invalidate();
+    }
+
+    private void panelIngredients_Paint(object sender, PaintEventArgs e)
+    {
+        Panel panel = (Panel)sender;
+        int thickness = 2;
+        using (Pen pen = new Pen(_accentColor, thickness))
+        {
+            int offset = thickness / 2;
+            e.Graphics.DrawRectangle(pen,
+                offset,
+                offset,
+                panel.Width - thickness,
+                panel.Height - thickness);
+        }
     }
 }

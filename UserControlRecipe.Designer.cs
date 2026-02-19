@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            labelImage = new Label();
             pictureBox = new PictureBox();
             labelTitle = new Label();
             richTextBoxInstructions = new RichTextBox();
@@ -52,12 +53,13 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 500F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(pictureBox, 2, 2);
+            tableLayoutPanel1.Controls.Add(labelImage, 2, 2);
+            tableLayoutPanel1.Controls.Add(pictureBox, 2, 3);
             tableLayoutPanel1.Controls.Add(labelTitle, 1, 0);
-            tableLayoutPanel1.Controls.Add(richTextBoxInstructions, 1, 5);
+            tableLayoutPanel1.Controls.Add(richTextBoxInstructions, 2, 5);
             tableLayoutPanel1.Controls.Add(richTextBoxDescription, 1, 1);
             tableLayoutPanel1.Controls.Add(labelIngredients, 5, 2);
-            tableLayoutPanel1.Controls.Add(labelInstructions, 1, 4);
+            tableLayoutPanel1.Controls.Add(labelInstructions, 2, 4);
             tableLayoutPanel1.Controls.Add(richTextBoxIngredients, 5, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -72,13 +74,27 @@
             tableLayoutPanel1.Size = new Size(1195, 750);
             tableLayoutPanel1.TabIndex = 0;
             // 
+            // labelImage
+            // 
+            labelImage.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelImage.AutoSize = true;
+            labelImage.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelImage.ForeColor = Color.Lime;
+            labelImage.Location = new Point(73, 158);
+            labelImage.Margin = new Padding(0);
+            labelImage.Name = "labelImage";
+            labelImage.Size = new Size(500, 34);
+            labelImage.TabIndex = 10;
+            labelImage.Text = "Slika";
+            labelImage.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // pictureBox
             // 
             pictureBox.Dock = DockStyle.Fill;
-            pictureBox.Location = new Point(76, 153);
+            pictureBox.Location = new Point(73, 200);
+            pictureBox.Margin = new Padding(0);
             pictureBox.Name = "pictureBox";
-            tableLayoutPanel1.SetRowSpan(pictureBox, 2);
-            pictureBox.Size = new Size(494, 344);
+            pictureBox.Size = new Size(500, 300);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
@@ -91,9 +107,10 @@
             tableLayoutPanel1.SetColumnSpan(labelTitle, 6);
             labelTitle.Font = new Font("Consolas", 32.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelTitle.ForeColor = Color.Lime;
-            labelTitle.Location = new Point(-24, 24);
+            labelTitle.Location = new Point(-27, 24);
+            labelTitle.Margin = new Padding(0);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(1244, 51);
+            labelTitle.Size = new Size(1250, 51);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Naslov recepta";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -107,11 +124,11 @@
             richTextBoxInstructions.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             richTextBoxInstructions.ForeColor = Color.White;
             richTextBoxInstructions.Location = new Point(73, 550);
-            richTextBoxInstructions.Margin = new Padding(100, 0, 100, 0);
+            richTextBoxInstructions.Margin = new Padding(0, 0, 100, 0);
             richTextBoxInstructions.Name = "richTextBoxInstructions";
             richTextBoxInstructions.ReadOnly = true;
             richTextBoxInstructions.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBoxInstructions.Size = new Size(1050, 200);
+            richTextBoxInstructions.Size = new Size(1023, 200);
             richTextBoxInstructions.TabIndex = 2;
             richTextBoxInstructions.TabStop = false;
             richTextBoxInstructions.Text = "";
@@ -140,11 +157,12 @@
             // 
             labelIngredients.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelIngredients.AutoSize = true;
-            labelIngredients.Font = new Font("Consolas", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelIngredients.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelIngredients.ForeColor = Color.Lime;
-            labelIngredients.Location = new Point(626, 156);
+            labelIngredients.Location = new Point(623, 158);
+            labelIngredients.Margin = new Padding(0);
             labelIngredients.Name = "labelIngredients";
-            labelIngredients.Size = new Size(494, 37);
+            labelIngredients.Size = new Size(500, 34);
             labelIngredients.TabIndex = 6;
             labelIngredients.Text = "Sestavine";
             labelIngredients.TextAlign = ContentAlignment.MiddleLeft;
@@ -154,12 +172,12 @@
             labelInstructions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             labelInstructions.AutoSize = true;
             tableLayoutPanel1.SetColumnSpan(labelInstructions, 6);
-            labelInstructions.Font = new Font("Consolas", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelInstructions.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelInstructions.ForeColor = Color.Lime;
-            labelInstructions.Location = new Point(73, 506);
-            labelInstructions.Margin = new Padding(100, 0, 100, 0);
+            labelInstructions.Location = new Point(73, 508);
+            labelInstructions.Margin = new Padding(0, 0, 100, 0);
             labelInstructions.Name = "labelInstructions";
-            labelInstructions.Size = new Size(1050, 37);
+            labelInstructions.Size = new Size(1023, 34);
             labelInstructions.TabIndex = 7;
             labelInstructions.Text = "Navodila";
             labelInstructions.TextAlign = ContentAlignment.MiddleLeft;
@@ -172,9 +190,9 @@
             richTextBoxIngredients.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             richTextBoxIngredients.ForeColor = Color.White;
             richTextBoxIngredients.Location = new Point(623, 200);
-            richTextBoxIngredients.Margin = new Padding(0, 0, 100, 0);
+            richTextBoxIngredients.Margin = new Padding(0);
             richTextBoxIngredients.Name = "richTextBoxIngredients";
-            richTextBoxIngredients.Size = new Size(400, 300);
+            richTextBoxIngredients.Size = new Size(500, 300);
             richTextBoxIngredients.TabIndex = 9;
             richTextBoxIngredients.TabStop = false;
             richTextBoxIngredients.Text = "";
@@ -204,6 +222,7 @@
         private RichTextBox richTextBoxDescription;
         private Label labelIngredients;
         private Label labelInstructions;
+        private Label labelImage;
         private RichTextBox richTextBoxIngredients;
     }
 }
