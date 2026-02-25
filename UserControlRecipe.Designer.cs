@@ -132,12 +132,14 @@
             richTextBoxInstructions.TabIndex = 2;
             richTextBoxInstructions.TabStop = false;
             richTextBoxInstructions.Text = "";
+            richTextBoxInstructions.TextPadding = new Padding(5);
             richTextBoxInstructions.TextChanged += richTextBoxInstructions_TextChanged;
             richTextBoxInstructions.MouseDown += richTextBoxInstructions_MouseDown;
             // 
             // richTextBoxDescription
             // 
             richTextBoxDescription.BackColor = Color.FromArgb(18, 18, 18);
+            richTextBoxDescription.BorderColor = Color.Transparent;
             richTextBoxDescription.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(richTextBoxDescription, 4);
             richTextBoxDescription.Dock = DockStyle.Fill;
@@ -151,6 +153,7 @@
             richTextBoxDescription.TabIndex = 4;
             richTextBoxDescription.TabStop = false;
             richTextBoxDescription.Text = "";
+            richTextBoxDescription.TextPadding = new Padding(5);
             richTextBoxDescription.MouseDown += richTextBoxDescription_MouseDown;
             // 
             // labelIngredients
@@ -196,6 +199,7 @@
             richTextBoxIngredients.TabIndex = 9;
             richTextBoxIngredients.TabStop = false;
             richTextBoxIngredients.Text = "";
+            richTextBoxIngredients.TextPadding = new Padding(5);
             richTextBoxIngredients.TextChanged += richTextBoxIngredients_TextChanged;
             richTextBoxIngredients.MouseDown += richTextBoxIngredients_MouseDown;
             // 

@@ -66,6 +66,20 @@ public partial class UserControlEditor : UserControl
             return;
         }
 
+        if (listBoxIngredientsEdit.Items.Count == 0)
+        {
+            MessageBox.Show("Prosim dodaj vsaj eno sestavino.", "Napaka",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
+        if (listBoxInstructionsEdit.Items.Count == 0)
+        {
+            MessageBox.Show("Prosim dodaj vsaj eno navodilo.", "Napaka",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
         List<string> ingredients = new List<string>();
         foreach (var item in listBoxIngredientsEdit.Items)
         {
@@ -260,6 +274,7 @@ public partial class UserControlEditor : UserControl
         if (e.KeyCode == Keys.Enter)
         {
             e.SuppressKeyPress = true;
+            btnAddIngredient_Click(sender, e);
         }
     }
 
@@ -268,6 +283,36 @@ public partial class UserControlEditor : UserControl
         if (e.KeyCode == Keys.Enter)
         {
             e.SuppressKeyPress = true;
+            btnAddInstruction_Click(sender, e);
         }
+    }
+
+    private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+    {
+        int thickness = 2;
+        using (Pen pen = new Pen(Color.White, thickness))
+        {
+            DrawBorderAroundControl(e.Graphics, pictureBoxEdit, pen, thickness);
+
+            DrawBorderAroundControl(e.Graphics, listBoxIngredientsEdit, pen, thickness);
+
+            DrawBorderAroundControl(e.Graphics, listBoxInstructionsEdit, pen, thickness);
+
+            DrawBorderAroundControl(e.Graphics, textBoxAddIngredient, pen, thickness);
+
+            DrawBorderAroundControl(e.Graphics, textBoxAddInstruction, pen, thickness);
+        }
+
+    }
+    private void DrawBorderAroundControl(Graphics g, Control control, Pen pen, int thickness)
+    {
+        int offset = thickness / 2;
+        Rectangle rect = new Rectangle(
+            control.Left - offset,
+            control.Top - offset,
+            control.Width + thickness - 1,
+            control.Height + thickness - 1
+        );
+        g.DrawRectangle(pen, rect);
     }
 }

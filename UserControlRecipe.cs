@@ -168,7 +168,7 @@ public partial class UserControlRecipe : UserControl
 
         ingredientsBox.BorderColor = color;
         instructionsBox.BorderColor = color;
-        descriptionBox.BorderColor = color;
+        //descriptionBox.BorderColor = color;
 
         ingredientsBox.TextPadding = new Padding(5);
         instructionsBox.TextPadding = new Padding(5);

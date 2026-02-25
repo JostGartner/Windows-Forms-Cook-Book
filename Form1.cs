@@ -31,8 +31,6 @@ public partial class Application : Form
 
     private void Application_Load(object sender, EventArgs e)
     {
-        //this.FormBorderStyle = FormBorderStyle.None;
-
         panelRecipe.Padding = new Padding(2);
         panelBar.Padding = new Padding(2);
 

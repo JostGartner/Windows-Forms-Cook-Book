@@ -94,6 +94,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel1.Size = new Size(1461, 862);
             tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // btnRemoveInstruction
             // 
@@ -104,10 +105,9 @@
             btnRemoveInstruction.FlatStyle = FlatStyle.Flat;
             btnRemoveInstruction.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnRemoveInstruction.ForeColor = Color.Red;
-            btnRemoveInstruction.Location = new Point(1205, 762);
-            btnRemoveInstruction.Margin = new Padding(0);
+            btnRemoveInstruction.Location = new Point(1208, 765);
             btnRemoveInstruction.Name = "btnRemoveInstruction";
-            btnRemoveInstruction.Size = new Size(50, 50);
+            btnRemoveInstruction.Size = new Size(44, 44);
             btnRemoveInstruction.TabIndex = 21;
             btnRemoveInstruction.TabStop = false;
             btnRemoveInstruction.Text = "-";
@@ -123,10 +123,9 @@
             btnAddInstruction.FlatStyle = FlatStyle.Flat;
             btnAddInstruction.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnAddInstruction.ForeColor = Color.Lime;
-            btnAddInstruction.Location = new Point(1155, 762);
-            btnAddInstruction.Margin = new Padding(0);
+            btnAddInstruction.Location = new Point(1158, 765);
             btnAddInstruction.Name = "btnAddInstruction";
-            btnAddInstruction.Size = new Size(50, 50);
+            btnAddInstruction.Size = new Size(44, 44);
             btnAddInstruction.TabIndex = 20;
             btnAddInstruction.TabStop = false;
             btnAddInstruction.Text = "+";
@@ -136,7 +135,7 @@
             // textBoxAddInstruction
             // 
             textBoxAddInstruction.BackColor = Color.FromArgb(18, 18, 18);
-            textBoxAddInstruction.BorderStyle = BorderStyle.FixedSingle;
+            textBoxAddInstruction.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(textBoxAddInstruction, 4);
             textBoxAddInstruction.Dock = DockStyle.Fill;
             textBoxAddInstruction.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
@@ -159,10 +158,9 @@
             btnRemoveIngredient.FlatStyle = FlatStyle.Flat;
             btnRemoveIngredient.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnRemoveIngredient.ForeColor = Color.Red;
-            btnRemoveIngredient.Location = new Point(1205, 450);
-            btnRemoveIngredient.Margin = new Padding(0);
+            btnRemoveIngredient.Location = new Point(1208, 453);
             btnRemoveIngredient.Name = "btnRemoveIngredient";
-            btnRemoveIngredient.Size = new Size(50, 50);
+            btnRemoveIngredient.Size = new Size(44, 44);
             btnRemoveIngredient.TabIndex = 18;
             btnRemoveIngredient.TabStop = false;
             btnRemoveIngredient.Text = "-";
@@ -178,10 +176,9 @@
             btnAddIngredient.FlatStyle = FlatStyle.Flat;
             btnAddIngredient.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnAddIngredient.ForeColor = Color.Lime;
-            btnAddIngredient.Location = new Point(1155, 450);
-            btnAddIngredient.Margin = new Padding(0);
+            btnAddIngredient.Location = new Point(1158, 453);
             btnAddIngredient.Name = "btnAddIngredient";
-            btnAddIngredient.Size = new Size(50, 50);
+            btnAddIngredient.Size = new Size(44, 44);
             btnAddIngredient.TabIndex = 17;
             btnAddIngredient.TabStop = false;
             btnAddIngredient.Text = "+";
@@ -191,7 +188,7 @@
             // textBoxAddIngredient
             // 
             textBoxAddIngredient.BackColor = Color.FromArgb(18, 18, 18);
-            textBoxAddIngredient.BorderStyle = BorderStyle.FixedSingle;
+            textBoxAddIngredient.BorderStyle = BorderStyle.None;
             textBoxAddIngredient.Dock = DockStyle.Fill;
             textBoxAddIngredient.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             textBoxAddIngredient.ForeColor = Color.White;
@@ -264,7 +261,7 @@
             // listBoxInstructionsEdit
             // 
             listBoxInstructionsEdit.BackColor = Color.FromArgb(18, 18, 18);
-            listBoxInstructionsEdit.BorderStyle = BorderStyle.FixedSingle;
+            listBoxInstructionsEdit.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(listBoxInstructionsEdit, 6);
             listBoxInstructionsEdit.Dock = DockStyle.Fill;
             listBoxInstructionsEdit.ForeColor = Color.White;
@@ -293,7 +290,6 @@
             // 
             // pictureBoxEdit
             // 
-            pictureBoxEdit.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxEdit.Dock = DockStyle.Fill;
             pictureBoxEdit.Location = new Point(205, 200);
             pictureBoxEdit.Margin = new Padding(0);
@@ -340,7 +336,7 @@
             // listBoxIngredientsEdit
             // 
             listBoxIngredientsEdit.BackColor = Color.FromArgb(18, 18, 18);
-            listBoxIngredientsEdit.BorderStyle = BorderStyle.FixedSingle;
+            listBoxIngredientsEdit.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(listBoxIngredientsEdit, 3);
             listBoxIngredientsEdit.Dock = DockStyle.Fill;
             listBoxIngredientsEdit.ForeColor = Color.White;
