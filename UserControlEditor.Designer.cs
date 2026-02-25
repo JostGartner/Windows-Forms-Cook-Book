@@ -145,7 +145,7 @@
             textBoxAddInstruction.Margin = new Padding(0);
             textBoxAddInstruction.Multiline = true;
             textBoxAddInstruction.Name = "textBoxAddInstruction";
-            textBoxAddInstruction.PlaceholderText = " Vpišite novo vrstico navodila...";
+            textBoxAddInstruction.PlaceholderText = " Vpiši novo vrstico navodila...";
             textBoxAddInstruction.Size = new Size(950, 50);
             textBoxAddInstruction.TabIndex = 19;
             textBoxAddInstruction.KeyDown += textBoxAddInstruction_KeyDown;
@@ -199,7 +199,7 @@
             textBoxAddIngredient.Margin = new Padding(0);
             textBoxAddIngredient.Multiline = true;
             textBoxAddIngredient.Name = "textBoxAddIngredient";
-            textBoxAddIngredient.PlaceholderText = "Vpišite novo sestavino...";
+            textBoxAddIngredient.PlaceholderText = "Vpiši novo sestavino...";
             textBoxAddIngredient.Size = new Size(400, 50);
             textBoxAddIngredient.TabIndex = 16;
             textBoxAddIngredient.KeyDown += textBoxAddIngredient_KeyDown;
@@ -254,10 +254,10 @@
             btnChooseImage.Location = new Point(210, 155);
             btnChooseImage.Margin = new Padding(5);
             btnChooseImage.Name = "btnChooseImage";
-            btnChooseImage.Size = new Size(200, 40);
+            btnChooseImage.Size = new Size(170, 40);
             btnChooseImage.TabIndex = 11;
             btnChooseImage.TabStop = false;
-            btnChooseImage.Text = "Izberite Sliko";
+            btnChooseImage.Text = "Izberi sliko";
             btnChooseImage.UseVisualStyleBackColor = false;
             btnChooseImage.Click += btnChooseImage_Click;
             // 
@@ -293,6 +293,7 @@
             // 
             // pictureBoxEdit
             // 
+            pictureBoxEdit.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxEdit.Dock = DockStyle.Fill;
             pictureBoxEdit.Location = new Point(205, 200);
             pictureBoxEdit.Margin = new Padding(0);
@@ -302,7 +303,6 @@
             pictureBoxEdit.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBoxEdit.TabIndex = 6;
             pictureBoxEdit.TabStop = false;
-            pictureBoxEdit.Paint += pictureBoxEdit_Paint;
             // 
             // textBoxTitleEdit
             // 

@@ -270,18 +270,4 @@ public partial class UserControlEditor : UserControl
             e.SuppressKeyPress = true;
         }
     }
-
-    private void pictureBoxEdit_Paint(object sender, PaintEventArgs e)
-    {
-        int thickness = 2;
-        using (Pen pen = new Pen(_accentColor, thickness))
-        {
-            int offset = thickness / 2;
-            e.Graphics.DrawRectangle(pen,
-                offset,
-                offset,
-                pictureBoxEdit.Width - thickness,
-                pictureBoxEdit.Height - thickness);
-        }
-    }
 }

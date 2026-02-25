@@ -119,16 +119,16 @@
             // 
             richTextBoxInstructions.BackColor = Color.FromArgb(18, 18, 18);
             richTextBoxInstructions.BorderStyle = BorderStyle.None;
-            tableLayoutPanel1.SetColumnSpan(richTextBoxInstructions, 6);
+            tableLayoutPanel1.SetColumnSpan(richTextBoxInstructions, 4);
             richTextBoxInstructions.Dock = DockStyle.Fill;
             richTextBoxInstructions.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             richTextBoxInstructions.ForeColor = Color.White;
             richTextBoxInstructions.Location = new Point(73, 550);
-            richTextBoxInstructions.Margin = new Padding(0, 0, 100, 0);
+            richTextBoxInstructions.Margin = new Padding(0);
             richTextBoxInstructions.Name = "richTextBoxInstructions";
             richTextBoxInstructions.ReadOnly = true;
             richTextBoxInstructions.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBoxInstructions.Size = new Size(1023, 200);
+            richTextBoxInstructions.Size = new Size(1050, 200);
             richTextBoxInstructions.TabIndex = 2;
             richTextBoxInstructions.TabStop = false;
             richTextBoxInstructions.Text = "";
