@@ -162,6 +162,18 @@ public partial class UserControlRecipe : UserControl
         labelIngredients.ForeColor = color;
         labelInstructions.ForeColor = color;
 
+        var ingredientsBox = (BorderedRichTextBox)richTextBoxIngredients;
+        var instructionsBox = (BorderedRichTextBox)richTextBoxInstructions;
+        var descriptionBox = (BorderedRichTextBox)richTextBoxDescription;
+
+        ingredientsBox.BorderColor = color;
+        instructionsBox.BorderColor = color;
+        descriptionBox.BorderColor = color;
+
+        ingredientsBox.TextPadding = new Padding(5);
+        instructionsBox.TextPadding = new Padding(5);
+        descriptionBox.TextPadding = new Padding(5);
+
         HighlightIngredients(color);
         HighlightInstructions(color);
 

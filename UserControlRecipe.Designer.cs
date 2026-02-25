@@ -32,11 +32,11 @@
             labelImage = new Label();
             pictureBox = new PictureBox();
             labelTitle = new Label();
-            richTextBoxInstructions = new RichTextBox();
-            richTextBoxDescription = new RichTextBox();
+            richTextBoxInstructions = new BorderedRichTextBox();
+            richTextBoxDescription = new BorderedRichTextBox();
             labelIngredients = new Label();
             labelInstructions = new Label();
-            richTextBoxIngredients = new RichTextBox();
+            richTextBoxIngredients = new BorderedRichTextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
@@ -57,7 +57,7 @@
             tableLayoutPanel1.Controls.Add(pictureBox, 2, 3);
             tableLayoutPanel1.Controls.Add(labelTitle, 1, 0);
             tableLayoutPanel1.Controls.Add(richTextBoxInstructions, 2, 5);
-            tableLayoutPanel1.Controls.Add(richTextBoxDescription, 1, 1);
+            tableLayoutPanel1.Controls.Add(richTextBoxDescription, 2, 1);
             tableLayoutPanel1.Controls.Add(labelIngredients, 5, 2);
             tableLayoutPanel1.Controls.Add(labelInstructions, 2, 4);
             tableLayoutPanel1.Controls.Add(richTextBoxIngredients, 5, 3);
@@ -124,11 +124,11 @@
             richTextBoxInstructions.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             richTextBoxInstructions.ForeColor = Color.White;
             richTextBoxInstructions.Location = new Point(73, 550);
-            richTextBoxInstructions.Margin = new Padding(0);
+            richTextBoxInstructions.Margin = new Padding(0, 0, 0, 100);
             richTextBoxInstructions.Name = "richTextBoxInstructions";
             richTextBoxInstructions.ReadOnly = true;
             richTextBoxInstructions.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBoxInstructions.Size = new Size(1050, 200);
+            richTextBoxInstructions.Size = new Size(1050, 100);
             richTextBoxInstructions.TabIndex = 2;
             richTextBoxInstructions.TabStop = false;
             richTextBoxInstructions.Text = "";
@@ -139,15 +139,15 @@
             // 
             richTextBoxDescription.BackColor = Color.FromArgb(18, 18, 18);
             richTextBoxDescription.BorderStyle = BorderStyle.None;
-            tableLayoutPanel1.SetColumnSpan(richTextBoxDescription, 6);
+            tableLayoutPanel1.SetColumnSpan(richTextBoxDescription, 4);
             richTextBoxDescription.Dock = DockStyle.Fill;
             richTextBoxDescription.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             richTextBoxDescription.ForeColor = Color.White;
-            richTextBoxDescription.Location = new Point(-24, 103);
+            richTextBoxDescription.Location = new Point(76, 103);
             richTextBoxDescription.Name = "richTextBoxDescription";
             richTextBoxDescription.ReadOnly = true;
             richTextBoxDescription.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBoxDescription.Size = new Size(1244, 44);
+            richTextBoxDescription.Size = new Size(1044, 44);
             richTextBoxDescription.TabIndex = 4;
             richTextBoxDescription.TabStop = false;
             richTextBoxDescription.Text = "";
@@ -218,11 +218,12 @@
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pictureBox;
         private Label labelTitle;
-        private RichTextBox richTextBoxInstructions;
-        private RichTextBox richTextBoxDescription;
         private Label labelIngredients;
         private Label labelInstructions;
         private Label labelImage;
-        private RichTextBox richTextBoxIngredients;
+
+        private BorderedRichTextBox richTextBoxInstructions;
+        private BorderedRichTextBox richTextBoxIngredients;
+        private BorderedRichTextBox richTextBoxDescription;
     }
 }
