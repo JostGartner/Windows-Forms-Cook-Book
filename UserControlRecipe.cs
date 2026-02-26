@@ -37,16 +37,20 @@ public partial class UserControlRecipe : UserControl
 
         if (!string.IsNullOrEmpty(recipe.ImagePath) && File.Exists(recipe.ImagePath))
         {
-            pictureBox.Image?.Dispose();
-            using (var img = Image.FromFile(recipe.ImagePath))
+            try
             {
-                pictureBox.Image = UserControlRecipe.ResizeAndCrop(img, pictureBox.Width, pictureBox.Height);
+                pictureBox.Image?.Dispose();
+                using (var img = Image.FromFile(recipe.ImagePath))
+                {
+                    pictureBox.Image = UserControlRecipe.ResizeAndCrop(img, pictureBox.Width, pictureBox.Height);
+                }
+                pictureBox.SizeMode = PictureBoxSizeMode.Normal;
             }
-            pictureBox.SizeMode = PictureBoxSizeMode.Normal;
-        }
-        else
-        {
-            pictureBox.Image = null;
+            catch (Exception)
+            {
+                pictureBox.Image = null;
+                labelImage.Text = "Slika ni dostopna";
+            }
         }
 
         richTextBoxDescription.Cursor = Cursors.Arrow;

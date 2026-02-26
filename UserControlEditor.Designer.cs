@@ -138,14 +138,14 @@
             textBoxAddInstruction.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(textBoxAddInstruction, 4);
             textBoxAddInstruction.Dock = DockStyle.Fill;
-            textBoxAddInstruction.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            textBoxAddInstruction.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             textBoxAddInstruction.ForeColor = Color.White;
-            textBoxAddInstruction.Location = new Point(205, 762);
-            textBoxAddInstruction.Margin = new Padding(0);
+            textBoxAddInstruction.Location = new Point(210, 767);
+            textBoxAddInstruction.Margin = new Padding(5);
             textBoxAddInstruction.Multiline = true;
             textBoxAddInstruction.Name = "textBoxAddInstruction";
             textBoxAddInstruction.PlaceholderText = " Vpiši novo vrstico navodila...";
-            textBoxAddInstruction.Size = new Size(950, 50);
+            textBoxAddInstruction.Size = new Size(940, 40);
             textBoxAddInstruction.TabIndex = 19;
             textBoxAddInstruction.KeyDown += textBoxAddInstruction_KeyDown;
             // 
@@ -190,14 +190,14 @@
             textBoxAddIngredient.BackColor = Color.FromArgb(18, 18, 18);
             textBoxAddIngredient.BorderStyle = BorderStyle.None;
             textBoxAddIngredient.Dock = DockStyle.Fill;
-            textBoxAddIngredient.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            textBoxAddIngredient.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             textBoxAddIngredient.ForeColor = Color.White;
-            textBoxAddIngredient.Location = new Point(755, 450);
-            textBoxAddIngredient.Margin = new Padding(0);
+            textBoxAddIngredient.Location = new Point(760, 455);
+            textBoxAddIngredient.Margin = new Padding(5);
             textBoxAddIngredient.Multiline = true;
             textBoxAddIngredient.Name = "textBoxAddIngredient";
             textBoxAddIngredient.PlaceholderText = "Vpiši novo sestavino...";
-            textBoxAddIngredient.Size = new Size(400, 50);
+            textBoxAddIngredient.Size = new Size(390, 40);
             textBoxAddIngredient.TabIndex = 16;
             textBoxAddIngredient.KeyDown += textBoxAddIngredient_KeyDown;
             // 
@@ -207,7 +207,7 @@
             textBoxDescriptionEdit.BackColor = Color.FromArgb(18, 18, 18);
             textBoxDescriptionEdit.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(textBoxDescriptionEdit, 6);
-            textBoxDescriptionEdit.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            textBoxDescriptionEdit.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             textBoxDescriptionEdit.ForeColor = Color.White;
             textBoxDescriptionEdit.Location = new Point(205, 107);
             textBoxDescriptionEdit.Margin = new Padding(0);
@@ -246,12 +246,12 @@
             btnChooseImage.FlatAppearance.BorderColor = Color.Lime;
             btnChooseImage.FlatAppearance.BorderSize = 2;
             btnChooseImage.FlatStyle = FlatStyle.Flat;
-            btnChooseImage.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnChooseImage.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnChooseImage.ForeColor = Color.White;
             btnChooseImage.Location = new Point(210, 155);
             btnChooseImage.Margin = new Padding(5);
             btnChooseImage.Name = "btnChooseImage";
-            btnChooseImage.Size = new Size(170, 40);
+            btnChooseImage.Size = new Size(160, 40);
             btnChooseImage.TabIndex = 11;
             btnChooseImage.TabStop = false;
             btnChooseImage.Text = "Izberi sliko";
@@ -264,6 +264,7 @@
             listBoxInstructionsEdit.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(listBoxInstructionsEdit, 6);
             listBoxInstructionsEdit.Dock = DockStyle.Fill;
+            listBoxInstructionsEdit.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             listBoxInstructionsEdit.ForeColor = Color.White;
             listBoxInstructionsEdit.FormattingEnabled = true;
             listBoxInstructionsEdit.Location = new Point(205, 550);
@@ -339,6 +340,7 @@
             listBoxIngredientsEdit.BorderStyle = BorderStyle.None;
             tableLayoutPanel1.SetColumnSpan(listBoxIngredientsEdit, 3);
             listBoxIngredientsEdit.Dock = DockStyle.Fill;
+            listBoxIngredientsEdit.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             listBoxIngredientsEdit.ForeColor = Color.White;
             listBoxIngredientsEdit.FormattingEnabled = true;
             listBoxIngredientsEdit.Location = new Point(755, 200);

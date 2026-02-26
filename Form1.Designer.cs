@@ -77,7 +77,7 @@
             btnDelete.FlatAppearance.BorderColor = Color.Lime;
             btnDelete.FlatAppearance.BorderSize = 2;
             btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnDelete.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnDelete.Location = new Point(265, 943);
             btnDelete.Margin = new Padding(5, 5, 5, 25);
             btnDelete.Name = "btnDelete";
@@ -96,7 +96,7 @@
             btnEdit.FlatAppearance.BorderColor = Color.Lime;
             btnEdit.FlatAppearance.BorderSize = 2;
             btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnEdit.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnEdit.Location = new Point(145, 943);
             btnEdit.Margin = new Padding(5, 5, 5, 25);
             btnEdit.Name = "btnEdit";
@@ -115,7 +115,7 @@
             btnAdd.FlatAppearance.BorderColor = Color.Lime;
             btnAdd.FlatAppearance.BorderSize = 2;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnAdd.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(25, 943);
             btnAdd.Margin = new Padding(25, 5, 5, 25);

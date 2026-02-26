@@ -95,7 +95,7 @@ public partial class UserControlEditor : UserControl
         Recipe newRecipe = new Recipe(
             textBoxTitleEdit.Text,
             textBoxDescriptionEdit.Text,
-            _imagePath!,
+            _imagePath ?? "",
             ingredients,
             instructions
         );
