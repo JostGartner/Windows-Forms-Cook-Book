@@ -117,7 +117,23 @@ public partial class UserControlEditor : UserControl
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                _imagePath = dialog.FileName;
+                // Kopiraj sliko v app folder
+                string imagesFolder = GetImagesFolder();
+                string fileName = Path.GetFileName(dialog.FileName);
+                string destinationPath = Path.Combine(imagesFolder, fileName);
+
+                // Če že obstaja, dodaj timestamp
+                if (File.Exists(destinationPath))
+                {
+                    string nameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
+                    string ext = Path.GetExtension(fileName);
+                    fileName = $"{nameWithoutExt}_{DateTime.Now:yyyyMMddHHmmss}{ext}";
+                    destinationPath = Path.Combine(imagesFolder, fileName);
+                }
+
+                File.Copy(dialog.FileName, destinationPath, true);
+                _imagePath = destinationPath;
+
                 pictureBoxEdit.Image?.Dispose();
                 using (var img = Image.FromFile(_imagePath))
                 {
@@ -126,6 +142,20 @@ public partial class UserControlEditor : UserControl
                 pictureBoxEdit.SizeMode = PictureBoxSizeMode.Normal;
             }
         }
+    }
+
+    private static string GetImagesFolder()
+    {
+        string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        string appFolder = Path.Combine(appData, "E-Cookbook");
+        string imagesFolder = Path.Combine(appFolder, "Images");
+
+        if (!Directory.Exists(imagesFolder))
+        {
+            Directory.CreateDirectory(imagesFolder);
+        }
+
+        return imagesFolder;
     }
 
     private void btnAddIngredient_Click(object sender, EventArgs e)

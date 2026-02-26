@@ -34,6 +34,7 @@ public partial class Application : Form
         panelRecipe.Padding = new Padding(2);
         panelBar.Padding = new Padding(2);
 
+        MigrateOldData();
         ButtonStyling();
 
         Label title = new Label();
@@ -123,7 +124,7 @@ public partial class Application : Form
 
     private List<Recipe> LoadFromJson()
     {
-        string path = "recipes.json";
+        string path = Path.Combine(GetAppDataFolder(), "recipes.json");
 
         if (!File.Exists(path)) return new List<Recipe>();
 
@@ -370,7 +371,7 @@ public partial class Application : Form
 
     private void SaveToJson()
     {
-        string path = "recipes.json";
+        string path = Path.Combine(GetAppDataFolder(), "recipes.json");
         string json = JsonSerializer.Serialize(recipes, new JsonSerializerOptions
         {
             WriteIndented = true,
@@ -420,6 +421,82 @@ public partial class Application : Form
             }
         }
     }
+
+    private static string GetAppDataFolder()
+    {
+        string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        string appFolder = Path.Combine(appData, "E-Cookbook");
+
+        if (!Directory.Exists(appFolder))
+        {
+            Directory.CreateDirectory(appFolder);
+        }
+
+        return appFolder;
+    }
+
+    private static string GetImagesFolder()
+    {
+        string imagesFolder = Path.Combine(GetAppDataFolder(), "Images");
+
+        if (!Directory.Exists(imagesFolder))
+        {
+            Directory.CreateDirectory(imagesFolder);
+        }
+
+        return imagesFolder;
+    }
+
+    private void MigrateOldData()
+    {
+        string oldPath = "recipes.json";
+        string newPath = Path.Combine(GetAppDataFolder(), "recipes.json");
+
+        if (!File.Exists(newPath) && File.Exists(oldPath))
+        {
+            try
+            {
+                File.Copy(oldPath, newPath, false);
+
+                // Migriraj tudi slike
+                var oldRecipes = JsonSerializer.Deserialize<List<Recipe>>(
+                    File.ReadAllText(oldPath, Encoding.UTF8));
+
+                if (oldRecipes != null)
+                {
+                    string imagesFolder = GetImagesFolder();
+
+                    foreach (var recipe in oldRecipes)
+                    {
+                        if (!string.IsNullOrEmpty(recipe.ImagePath) && File.Exists(recipe.ImagePath))
+                        {
+                            string fileName = Path.GetFileName(recipe.ImagePath);
+                            string newImagePath = Path.Combine(imagesFolder, fileName);
+
+                            if (!File.Exists(newImagePath))
+                            {
+                                File.Copy(recipe.ImagePath, newImagePath, false);
+                            }
+
+                            recipe.ImagePath = newImagePath;
+                        }
+                    }
+
+                    string json = JsonSerializer.Serialize(oldRecipes, new JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    });
+                    File.WriteAllText(newPath, json, Encoding.UTF8);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Napaka pri migraciji podatkov: {ex.Message}",
+                    "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    }
 }
 
 public class MyRichTextBox : RichTextBox
@@ -465,15 +542,14 @@ public class MyRichTextBox : RichTextBox
             }
         }
 
-        if (m.Msg == EM_SETBKGNDCOLOR) //color disabled background
+        if (m.Msg == EM_SETBKGNDCOLOR)
         {
             Invalidate();
         }
 
-        if (m.Msg == WM_KILLFOCUS) //set border back to normal on lost focus
+        if (m.Msg == WM_KILLFOCUS)
         {
             Invalidate();
         }
     }
-
 }
